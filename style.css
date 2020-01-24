@@ -1,0 +1,496 @@
+/*
+    Global
+*/
+
+html{
+    height:100%;
+}
+
+body{
+    height:100%;
+    overflow: hidden;
+    background-image:url("background.jpg");
+    background-size:cover;
+}
+
+*{
+    font-family: 'Alatsi', sans-serif;
+}
+
+#contentdiv{
+    height:90%;
+    background-image: url("1x1.png");
+    padding:10px;
+    width:50%;
+    margin: 0 auto;
+}
+
+button a{
+    color:white;
+    text-decoration-line: none;
+    font-weight: normal;
+}
+
+input[type=text]{
+    background:none;
+    border:none;
+    border-bottom: 2px solid black;
+}
+
+input[type=password]{
+    background:none;
+    border:none;
+    border-bottom: 2px solid black;
+}
+
+select{
+    border:none;
+    background: none;
+    appearance: none;
+}
+input[type=submit],button{
+    background-color:#4CAF50;
+    border:none;
+    color:white;
+    padding:16px 32px;
+    text-decoration: none;
+    margin:4px 2px;
+    cursor: pointer;
+}
+
+section{
+    scroll-snap-align: center;
+    width:100%;
+    height:600px;
+}
+
+ul{
+    list-style: none;
+}
+
+tr,th{
+    border-bottom: 1px solid black;
+    padding: 15px;
+    text-align: left;
+}
+
+/*
+    Header
+*/
+
+header{
+    top:-8px;
+    left:-1%;
+    position: relative;
+    width: 100.4%;
+    overflow: hidden;
+    padding:10px;
+    background-image: url("1x1.png");
+}
+
+header a{
+    padding-left: 10px;
+    padding-right: 10px;
+    float: left;
+    color:black;
+    font-size:24px;
+    text-align: center;
+    line-height: 25px;
+}
+
+.header-mid a{
+    font-size: 40px;
+}
+
+.header-right a{
+    float: right;
+    font-size: 40px;
+}
+
+.searchbox{
+    float:right;
+    display:none;
+}
+
+.searchbox input[type=submit]{
+    float:right;
+}
+
+.searchbox input[type=text]{
+    margin-top:19px;
+}
+
+.searchbox input[type=submit]{
+    background-color:#4CAF50;
+    border:none;
+    color:white;
+    padding:12px 24px;
+    text-decoration: none;
+    margin:0px 1px;
+    cursor: pointer;
+}
+
+.circle{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+    /*
+        Login/Info div
+    */
+
+    .info-div{
+        padding:10px;
+        background-image: url("1x1.png");
+        float:right;
+    }
+    .info-div button{
+        width:100%;
+        margin: 0 auto;
+    }
+
+/*
+    Home
+*/
+
+.usernames{
+    color:black;
+}
+
+.likediv{
+    float:right;
+}
+
+.likediv a{
+    color:black;
+}
+
+.feed{
+    scrollbar-width: none;
+    height:100%;
+    overflow-y:auto;
+    scroll-snap-type: y mandatory;
+}
+
+.delete{
+    float:right;
+    color:black;
+}
+
+.delete a{
+    padding-right:10px;
+    color:black;
+    text-decoration:none;
+}
+
+.images{
+    width: auto;
+    height: 500px;
+    background-repeat: no-repeat;
+}
+
+.login-div{
+    padding:10px;
+    background-image: url("1x1.png");
+    float:right;
+}
+
+.login-div input[type=submit]{
+    padding:0px 0px;
+    width:70px;
+    height:40px;
+    margin-right: 10px;
+}
+
+.login-div button{
+    padding:0px 0px;
+    width:70px;
+    height:40px;
+}
+
+/*
+    Chat
+*/
+
+.chat-delete{
+    color:black;
+    font-size: 15px;
+    padding-left:5px;
+}
+
+.chatrow{
+    padding-left:30px;
+    padding-top:10px;
+    padding-bottom: 10px;
+}
+
+.chatuserimage{
+    border-radius: 100%;
+    width:40px;
+    float:left;
+    margin-top:-9px;
+    margin-right:10px;
+}
+
+.chatusers{
+    padding:15px;
+    width:300px;
+    border:1px solid black;
+    border-radius: 15px;
+    background-color:white;
+}
+
+.badge{
+    padding: 5px 10px;
+    float:right;
+    margin-top:-4px;
+    border-radius: 50%;
+    background: red;
+    color: white;
+}
+
+.chatusers a{
+    color:black;
+}
+
+.chat-image-own{
+    margin-top:6px;
+    width:40px;
+    border-radius: 100%;
+}
+
+.chat-user-post p{
+    float:right;
+    padding-left:10px;
+}
+
+.chat-own-post p{
+    padding-right:10px;
+    float:left;
+}
+
+.chat-image-user{
+    margin-top:6px;
+    width:40px;
+    border-radius: 100%;
+}
+
+.chat-own-post{
+    float:right;
+    height:50px;
+    margin-top:20px;
+    margin-right:10px;
+    padding:3px;
+    background-color:white;
+    border:1px solid black;
+    border-radius: 15px;
+}
+
+.chat-user-post{
+    float:left;
+    margin-top:20px;
+    margin-left:10px;
+    padding:3px;
+    background-color:white;
+    border:1px solid black;
+    border-radius: 15px;
+}
+
+.chat-content{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width:600px;
+    height: 533px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+
+.chatwindow{
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid black;
+    text-align: center;
+    width:600px;
+    height: 600px;
+}
+
+.chat-form{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+/*
+    User profile
+*/
+
+.showprofile{
+    margin-top: -4%;
+}
+
+.gender{
+    padding-left:40px;
+    position: relative;
+    top:63px;
+    font-size: 40px;
+}
+
+.circle_profile{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+}
+
+.showprofile_circle{
+    float:right;
+    top:-63px;
+    position:relative;
+    margin-right:40px;
+}
+
+.friend-remove input{
+    background-color:red;
+    margin-right:40px;
+}
+
+.backbutton{
+    float:left;
+    margin-top:20px;
+}
+
+.float-left{
+    float:right;
+}
+
+.friend-add{
+    margin-right: 40px;
+}
+
+/*
+    User profile | show all posts
+*/
+
+.userpost-div{
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width:750px;
+    height: 600px;
+}
+
+.userposts{
+    float:left;
+    max-height: 200px;
+    max-width:350px;
+    height:auto;
+    width:auto;
+    margin-left:20px;
+    margin-top:20px;
+}
+
+.gallery {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%; }
+    .gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease; }
+    .gallery .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1); }
+    
+    @media (max-width: 450px) {
+    .gallery {
+    -webkit-column-count: 1;
+    -moz-column-count: 1;
+    column-count: 1;
+    -webkit-column-width: 100%;
+    -moz-column-width: 100%;
+    column-width: 100%;
+    }
+    }
+    
+    @media (max-width: 400px) {
+    .btn.filter {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    }
+    }
+
+/*
+    Comment
+*/
+
+.commentsectionParent{
+    margin:0 auto;
+    width:300px;
+}
+
+.bottom input[type=submit]{
+    width:75px;
+    height: 40px;
+    padding:12px 24px;
+    cursor: pointer;
+}
+
+.bottom{
+    padding-bottom: 15px;
+    position: absolute;
+    bottom:0;
+}
+
+/*
+    Unknown
+*/
+
+.showpic{
+    width: auto;
+    height:600px;
+    padding-bottom: 30px;
+    text-align: center;
+    /*! font-size: ; */
+    /*! position: relative; */
+    /*! display: block; */
+}
+
+.showpic img{
+    max-width: 100%;
+    max-height: 100%;
+    width:755px;
+    width:auto;
+    height:auto;
+}
+
+.results li a{
+    text-decoration: underline;
+    color:black;
+}
+
+#uploadtext{
+    background:none;
+    resize: none;
+    overflow:auto;
+    border:1px solid black;
+}
+
+.floating{
+    float:left;
+    margin-right: 5px;
+    position: relative;
+}
