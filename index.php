@@ -10,7 +10,6 @@
         <script src="script.js"></script>
         <title>Altimer</title>
     </head>
-    <!-- TEST123-->
     <body>
         <header>
             <?php
