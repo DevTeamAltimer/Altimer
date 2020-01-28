@@ -44,7 +44,7 @@
             ?>
         </header>
         <div class='login-div' style='display:none;'>
-        <form action="index.php?home=1&success=1" method="post">
+        <form action="index.php?home=1&loginsuccess=1" method="post">
         <input type="text" name="email" placeholder="Email">
         <br>
         <br>

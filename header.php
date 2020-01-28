@@ -13,7 +13,7 @@ if(!(isset($_SESSION['user_id']))){
     $login = 1;
 }
 
-if(isset($_GET['success'])){
+if(isset($_GET['loginsuccess'])){
     $mail = $_POST['email'];
     $mail = strtolower($mail);
     $pw = $_POST['password'];
