@@ -8,14 +8,26 @@
         $password = $_POST['password'];
 
 
-        if(empty($firstname) || empty($lastname) || empty($location) || empty($password) || empty($image)){
+        if(empty($firstname) && empty($lastname) && empty($location) && empty($password) && empty($image)){
             echo "<script>alert('Missing fields Error!')</script>";
         }else{
-            if(!(in_array($location,$countries))){
-                echo "<script>alert('No valid country')</script>";
-            }else{
-            $sql_upload2 = "UPDATE users SET location='$location' WHERE id=".$user_id;
-            mysqli_query($conn,$sql_upload2) or die(mysqli_error($conn));
+            if(!(empty($firstname))){
+                mysqli_query($conn,"UPDATE users SET firstname='$firstname' WHERE id=".$user_id);
+            }
+            if(!(empty($lastname))){
+                mysqli_query($conn,"UPDATE users SET lastname='$lastname' WHERE id=".$user_id);
+            }
+            if(!(empty($location))){
+                if(!(in_array($location,$countries))){
+                    echo "<script>alert('No valid country')</script>";
+                }else{
+                    mysqli_query($conn,"UPDATE users SET location='$location' WHERE id=".$user_id);
+                }
+            }
+            if(!(empty($password))){
+                $password = password_hash($password,PASSWORD_DEFAULT);
+                mysqli_query($conn,"UPDATE users SET password='$password' WHERE id=".$user_id);
+            }
             if(!(empty($image))){
                 $imagename = $_FILES['image']['name'];
                 $imageTmpName = $_FILES['image']['tmp_name'];
@@ -43,8 +55,7 @@
                         echo "<script>alert('Upload Error!')</script>";
                     }
 
-                }
-            }
+                }    
             }
         }
     }
@@ -75,7 +86,7 @@
     <input type="text" name="country" id="countryinput" value="<?=$location_row?>" placeholder="Country">
     <br>
     <br>
-    <input type="password" name="password" value="<?=$password_row?>" placeholder="Password">
+    <input type="password" name="password" placeholder="Password">
     <br>
     <br>
     <p>Upload profile picture</p>
