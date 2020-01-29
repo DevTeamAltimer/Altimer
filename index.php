@@ -108,6 +108,9 @@
                 while($row = mysqli_fetch_assoc($result)){
                     $image = $row['image'];
                 }
+                if(empty($image)){
+                    $image = "noImage.png";
+                }
             ?>
             background-image:url("profile_pic/<?=$image?>");
             background-size: 100%;
@@ -121,6 +124,9 @@
                 $result = mysqli_query($conn,$sql);
                 while($row = mysqli_fetch_assoc($result)){
                     $image = $row['image'];
+                }
+                if(empty($image)){
+                    $image = "noImage.png";
                 }
             }
             ?>
