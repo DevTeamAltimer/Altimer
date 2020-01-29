@@ -61,9 +61,7 @@ if(!(isset($_GET['login'])) && !(isset($_GET['signup'])) && !(isset($_GET['suppo
         if(isset($_SESSION['user_id'])){
             echo "<a href='index.php?upload=1'><i class='fas fa-chevron-up'></i></a>";
         }
-        ?>
-
-        
+        ?>        
 
         <i class="fas fa-question-circle fa-3x mr-4"></i>
         <a href="index.php?messages=1"><i class="far fa-comment-dots fa-3x mr-4"></i></a>
@@ -72,23 +70,19 @@ if(!(isset($_GET['login'])) && !(isset($_GET['signup'])) && !(isset($_GET['suppo
                 echo "<span class='badge'>0</span>";
             }
         ?>
-        <?php
+        <a id='searchsymbol'><i class='fas fa-search fa-3x mr-4'></i></a>
         
-        echo "<a id='searchsymbol'><i class='fas fa-search fa-3x mr-4'></i></a>";
-            echo "<div class='header-right'>";
-        ?>
-        <?php
-            echo "  <div class='searchbox'>
-                        <form action='index.php?search=1' method='post'>
-                        <input id='searchField' type='text' placeholder='search...' name='search'>
-                        <input type='submit' value='search' name='submit'>
-                        </form>
-                    </div>
-            ";
-            echo "</div>";
-            echo "<a href='index.php?showprofile=1'><span class='circle circleHeader mr-3'></span></a>";
-        ?>
-        
+        <div class='header-right'>
+            <div class='searchbox'>
+                <form action='index.php?search=1' method='post'>
+                <input id='searchField' type='text' placeholder='search...' name='search'>
+                <input type='submit' value='search' name='submit'>
+                </form>
+            </div>
+        </div>
+
+        <a href='index.php?showprofile=1'><span class='circle circleHeader mr-3'></span></a>
+
 </div>
 
 
