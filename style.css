@@ -78,35 +78,10 @@ tr,th{
     Header
 */
 
-header{
-    top:-8px;
-    left:-1%;
-    position: relative;
-    width: 100.4%;
-    overflow: hidden;
-    padding:10px;
-    background-image: url("1x1.png");
+#headerTopBar a {
+    color: inherit;
+    text-decoration:none;
 }
-
-header a{
-    padding-left: 10px;
-    padding-right: 10px;
-    float: left;
-    color:black;
-    font-size:24px;
-    text-align: center;
-    line-height: 25px;
-}
-
-.header-mid a{
-    font-size: 40px;
-}
-
-.header-right a{
-    float: right;
-    font-size: 40px;
-}
-
 .searchbox{
     float:right;
     display:none;
@@ -493,4 +468,24 @@ header a{
     float:left;
     margin-right: 5px;
     position: relative;
+}
+#headerTopBar {
+    width:90%;
+    height: 80px;
+    margin-top: 50px;
+}
+.specialBox {
+    background: linear-gradient(to right, rgba(102, 154, 147, 0.86) 0%, rgba(248, 172, 241, 0.86) 100%);
+    border-radius: 25px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.circleHeader {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 6px;
+    border-style: solid;
+    border-color: black;
 }

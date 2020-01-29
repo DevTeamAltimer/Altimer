@@ -52,33 +52,43 @@ if(!(isset($_GET['login'])) && !(isset($_GET['signup'])) && !(isset($_GET['suppo
 }
 
 ?>
-<div class="header-mid">
-    <a href="index.php?home=1"><i class="fas fa-home"></i></a>
-    <?php
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<div id="headerTopBar" class="d-flex shadow specialBox align-items-center">
+        <i class="fas fa-home fa-3x mr-auto pl-4"></i>
+        <?php
         if(isset($_SESSION['user_id'])){
             echo "<a href='index.php?upload=1'><i class='fas fa-chevron-up'></i></a>";
         }
-    ?>
+        ?>
+
+        
+
+        <i class="fas fa-question-circle fa-3x mr-4"></i>
+        <a href="index.php?messages=1"><i class="far fa-comment-dots fa-3x mr-4"></i></a>
+        <?php
+            if(isset($notification) > 0){
+                echo "<span class='badge'>0</span>";
+            }
+        ?>
+        <?php
+        
+        echo "<a id='searchsymbol'><i class='fas fa-search fa-3x mr-4'></i></a>";
+            echo "<div class='header-right'>";
+        ?>
+        <?php
+            echo "  <div class='searchbox'>
+                        <form action='index.php?search=1' method='post'>
+                        <input id='searchField' type='text' placeholder='search...' name='search'>
+                        <input type='submit' value='search' name='submit'>
+                        </form>
+                    </div>
+            ";
+            echo "</div>";
+            echo "<a href='index.php?showprofile=1'><span class='circle circleHeader mr-3'></span></a>";
+        ?>
+        
 </div>
-<?php
-    echo "<div  class='header-right'>";
-    echo "<a href='index.php?showprofile=1'><span class='circle'></span></a>";
-    ?>
-<?php
-    echo "  <div class='searchbox'>
-                <form action='index.php?search=1' method='post'>
-                <input id='searchField' type='text' placeholder='search...' name='search'>
-                <input type='submit' value='search' name='submit'>
-                </form>
-            </div>
-    ";
-    echo "<a id='searchsymbol'><i class='fas fa-search'></i></a>";
-?>
-<a id="message-header" href="index.php?messages=1"><i class='fas fa-comment-dots'></i></a>
-    <?php
-    if(isset($notification) > 0){
-      echo "<span class='badge'>0</span>";
-    }
-?>
-<a href="index.php?support=1"><i class="fas fa-question-circle"></i></a>
-</div>
+
+
