@@ -30,9 +30,10 @@
                     if($resultckeck > 0){
                         echo "<script>alert('Email alreay taken...')</script>";
                     }else{
-                        $sql = "INSERT INTO users (firstname,lastname,email,password,birthday_day,birthday_month,birthday_year,gender) VALUES ('$firstname','$lastname','$email','$password','$birthday_day','$birthday_month','$birthday_year','$gender')";
+                        $hashedPW = password_hash($password,PASSWORD_DEFAULT);
+                        $sql = "INSERT INTO users (firstname,lastname,email,password,birthday_day,birthday_month,birthday_year,gender) VALUES ('$firstname','$lastname','$email','$hashedPW','$birthday_day','$birthday_month','$birthday_year','$gender')";
                         mysqli_query($conn,$sql);
-                        header("Refresh:0,url=index.php?login=1");
+                        header("Refresh:1,url=index.php?login=1");
                     }
                 }
             }

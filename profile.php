@@ -209,6 +209,9 @@
                             $i = 0;
                             //foreach item in imagearray (profile pics of friends) it loops
                             foreach($imagearray as $imagevalue){
+                              if(empty($imagevalue)){
+                                $imagevalue = "noImage.png";
+                              }
                               echo "<a href='index.php?profile=".$userarray[$i]."'><img class='userposts' src='profile_pic/".$imagevalue."'></a>";
                               $i++;
                             }
