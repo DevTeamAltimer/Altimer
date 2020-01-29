@@ -22,11 +22,14 @@ if(isset($_GET['loginsuccess'])){
     }else{
         $result_email = mysqli_query($conn,"SELECT email FROM users WHERE email='$mail'");
         $resultcheck_email = mysqli_num_rows($result_email);
-        $result_pw = mysqli_query($conn,"SELECT password FROM users WHERE password='$pw'");
+        $result_pw = mysqli_query($conn,"SELECT password FROM users WHERE email='$mail'");
         if($resultcheck_email > 0){
-            $resultcheck_pw = mysqli_num_rows($result_pw);
-            $resultcheck_pw = mysqli_num_rows($result_pw);
-                if($resultcheck_pw > 0){
+            $hashedpw = "";
+            while($row_pw = mysqli_fetch_assoc($result_pw)){
+                $hashedpw = $row_pw['password'];
+            }
+            $resultcheck_pw = password_verify($pw,$hashedpw);
+                if($resultcheck_pw == true){
                     $sql = "SELECT * FROM users WHERE email='$mail'";
                     $result = mysqli_query($conn,$sql);
                     while($row = mysqli_fetch_assoc($result)){
